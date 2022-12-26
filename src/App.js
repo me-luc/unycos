@@ -1,21 +1,13 @@
-import axios from "axios";
 import styled from "styled-components";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import UserContext from "./context/UserContext";
-import DATA_URL from "./constants/URL.js";
+
 import { useState } from "react";
+import Slider from "./components/slider/Slider";
+import Highlight from "./components/highlight/Highlight";
 
 export default function App() {
-	// const request = axios
-	// 	.get(URL, {
-	// 		headers: {
-	// 			"x-mejor-key": "unycos",
-	// 		},
-	// 	})
-	// 	.then((answer) => console.log(answer))
-	// 	.catch((answer) => console.log(answer));
-
 	const [auth, setAuth] = useState(false);
 	const userName = "Mary";
 
@@ -23,6 +15,8 @@ export default function App() {
 		<UserContext.Provider value={{ auth, setAuth, userName }}>
 			<StyledPage>
 				<Header />
+				<Highlight />
+				{/* <Slider /> */}
 				<Footer />
 			</StyledPage>
 		</UserContext.Provider>
@@ -35,7 +29,7 @@ const StyledPage = styled.div`
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
 	flex-direction: column;
 
