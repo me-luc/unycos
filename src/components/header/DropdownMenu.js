@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { SlideInDown } from "react-animations";
 import { useContext, useState } from "react";
 import UserContext from "../../context/UserContext";
 
@@ -12,8 +11,9 @@ export default function DropdownMenu({ isMenuOpen, setIsMenuOpen }) {
 		<StyledMenu
 			isMenuOpen={isMenuOpen}
 			className={isMenuOpen ? "fade-in" : "fade-out"}>
-			{options.map((item) => (
+			{options.map((item, index) => (
 				<Option
+					key={index}
 					selected={item === selectedItem}
 					onClick={() => {
 						setSelectedItem(item);

@@ -6,6 +6,7 @@ import UserContext from "./context/UserContext";
 import { useState } from "react";
 import Slider from "./components/slider/Slider";
 import Highlight from "./components/highlight/Highlight";
+import LessonPlan from "./components/lesson-plan/LessonPlan";
 
 export default function App() {
 	const [auth, setAuth] = useState(false);
@@ -17,6 +18,7 @@ export default function App() {
 				<Header />
 				<Highlight />
 				{/* <Slider /> */}
+				<LessonPlan />
 				<Footer />
 			</StyledPage>
 		</UserContext.Provider>
@@ -27,11 +29,12 @@ const StyledPage = styled.div`
 	background-color: #000;
 	color: #fff;
 	width: 100vw;
-	height: 100vh;
+	height: auto;
 	display: flex;
 	/* justify-content: center; */
 	align-items: center;
 	flex-direction: column;
+	overflow-y: scroll;
 
 	@media (max-width: 450px) {
 	}

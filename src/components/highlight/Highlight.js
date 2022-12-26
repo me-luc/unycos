@@ -34,6 +34,7 @@ const StyledButton = styled.button`
 	background: #c5af19;
 	border-radius: 4px;
 	border: none;
+	cursor: pointer;
 
 	color: #fff;
 	font-family: "Lato";
