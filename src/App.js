@@ -7,6 +7,8 @@ import { useState } from "react";
 import Slider from "./components/slider/Slider";
 import Highlight from "./components/highlight/Highlight";
 import LessonPlan from "./components/lesson-plan/LessonPlan";
+import MoreCourses from "./components/more-courses/MoreCourses";
+import Form from "./components/info-form/Form";
 
 export default function App() {
 	const [auth, setAuth] = useState(false);
@@ -19,6 +21,8 @@ export default function App() {
 				<Highlight />
 				<Slider />
 				<LessonPlan />
+				<MoreCourses />
+				<Form />
 				<Footer />
 			</StyledPage>
 		</UserContext.Provider>

@@ -43,6 +43,7 @@ export default function LessonPlan() {
 							title={item.title}
 							description={item.description}
 							number={index}
+							key={index}
 						/>
 					</>
 				);
