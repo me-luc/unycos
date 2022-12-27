@@ -5,10 +5,8 @@ import styled from "styled-components";
 import { BallTriangle } from "react-loader-spinner";
 
 export default function Slider() {
-	const [slides, setSlides] = React.useState(null);
 	const [spolight, setSpolight] = React.useState(null);
 	const [trio, setTrio] = React.useState(null);
-	const [isSlideStarted, setIsSlideStarted] = useState(false);
 
 	const headers = {
 		headers: {
@@ -22,38 +20,31 @@ export default function Slider() {
 			.get(DATA_URL, headers)
 			.then((answer) => {
 				let data = answer.data.spotlights;
-				setSlides(data);
 				setSpolight(data[0]);
 
 				function updateTrio() {
 					let newArr = [...data];
 					newArr.shift();
 					setTrio([...newArr]);
-					console.log("TRIO NOW", trio);
-					setIsSlideStarted(true);
 				}
 				updateTrio();
 			})
 			.catch((answer) => console.log(answer));
 	}, []);
 
+	//starting slider
 	useEffect(() => {
-		console.log("hi");
-		if (!trio) return;
-		console.log(trio[0].title, trio[1].title, trio[2].title);
+		if (!trio || !spolight) return;
 
-		function updateTrio() {
+		const interval = setInterval(() => {
 			let newArr = [...trio];
 			newArr.shift();
 			newArr.push(spolight);
 
 			setTrio(newArr);
 			setSpolight(trio[0]);
-		}
-
-		const id = window.setTimeout(updateTrio, 4000);
-
-		window.clearTimeout(id);
+		}, 4000);
+		return () => clearInterval(interval);
 	}, [spolight]);
 
 	return (
@@ -98,7 +89,7 @@ export default function Slider() {
 							{trio.map((slide, index) => {
 								if (slide._id !== spolight._id)
 									return (
-										<Article index={index}>
+										<Article index={index} key={slide._id}>
 											<img
 												src={slide.image}
 												alt={slide.title}
@@ -121,6 +112,7 @@ const StyledSlider = styled.section`
 	background: #fbfaf7;
 	border-radius: 4px;
 	display: flex;
+	margin-bottom: 45px;
 `;
 
 const ImageBox = styled.figure`

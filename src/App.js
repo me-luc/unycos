@@ -17,7 +17,7 @@ export default function App() {
 			<StyledPage>
 				<Header />
 				<Highlight />
-				{/* <Slider /> */}
+				<Slider />
 				<LessonPlan />
 				<Footer />
 			</StyledPage>
