@@ -9,6 +9,9 @@ import Highlight from "./components/highlight/Highlight";
 import LessonPlan from "./components/lesson-plan/LessonPlan";
 import MoreCourses from "./components/more-courses/MoreCourses";
 import Form from "./components/info-form/Form";
+import ReadMore from "./components/read-more/ReadMore";
+import RelatedArticles from "./components/related-articles/RelatedArticles";
+import Comments from "./components/comments/Comments";
 
 export default function App() {
 	const [auth, setAuth] = useState(false);
@@ -23,6 +26,9 @@ export default function App() {
 				<LessonPlan />
 				<MoreCourses />
 				<Form />
+				<Comments />
+				<RelatedArticles />
+				<ReadMore />
 				<Footer />
 			</StyledPage>
 		</UserContext.Provider>
