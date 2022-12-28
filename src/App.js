@@ -1,17 +1,7 @@
 import styled from "styled-components";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
 import UserContext from "./context/UserContext";
-
 import { useState } from "react";
-import Slider from "./components/slider/Slider";
-import Highlight from "./components/highlight/Highlight";
-import LessonPlan from "./components/lesson-plan/LessonPlan";
-import MoreCourses from "./components/more-courses/MoreCourses";
-import Form from "./components/info-form/Form";
-import ReadMore from "./components/read-more/ReadMore";
-import RelatedArticles from "./components/related-articles/RelatedArticles";
-import Comments from "./components/comments/Comments";
+import * as Component from "./components/index";
 
 export default function App() {
 	const [auth, setAuth] = useState(false);
@@ -20,16 +10,16 @@ export default function App() {
 	return (
 		<UserContext.Provider value={{ auth, setAuth, userName }}>
 			<StyledPage>
-				<Header />
-				<Highlight />
-				<Slider />
-				<LessonPlan />
-				<MoreCourses />
-				<Form />
-				<Comments />
-				<RelatedArticles />
-				<ReadMore />
-				<Footer />
+				<Component.Header />
+				<Component.Highlight />
+				<Component.Slider />
+				<Component.LessonPlan />
+				<Component.MoreCourses />
+				<Component.Form />
+				<Component.Comments />
+				<Component.RelatedArticles />
+				<Component.ReadMore />
+				<Component.Footer />
 			</StyledPage>
 		</UserContext.Provider>
 	);
