@@ -6,9 +6,17 @@ export default function Form() {
 	}
 	return (
 		<Page onSubmit={submit}>
-			<StyledInput type="" placeholder="Nombre completo" name="" />
-			<StyledInput type="" placeholder="Correo electrónico" name="" />
-			<StyledInput type="" placeholder="País / Código país" name="" />
+			<StyledInput type="name" placeholder="Nombre completo" name="" />
+			<StyledInput
+				type="email"
+				placeholder="Correo electrónico"
+				name=""
+			/>
+			<StyledInput
+				type="country"
+				placeholder="País / Código país"
+				name=""
+			/>
 			<StyledInput type="" placeholder="TeLéfono" name="" />
 
 			<div className="checkbox">
@@ -130,7 +138,7 @@ const StyledInput = styled.input`
 	font-size: 18px;
 	line-height: 20px;
 	text-transform: uppercase;
-	color: #d8d7ce;
+	color: #a1a097;
 	border: none;
 	margin: 7px;
 `;

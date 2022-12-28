@@ -1,32 +1,12 @@
 import styled from "styled-components";
 import Course from "./Course";
-import marcusImg from "../../assets/course-sport.png";
-import ismaelImg from "../../assets/course-man.png";
-import lewisImg from "../../assets/course-makeup.png";
+import { courses } from "../../constants/data";
 
 export default function MoreCourses() {
-	const courses = [
-		{
-			title: "piragüismo",
-			tutor: "Marcus Cooper",
-			img: marcusImg,
-		},
-		{
-			title: "DESARROLLO PERSONAL",
-			tutor: "ISMAEL CALA",
-			img: ismaelImg,
-		},
-		{
-			title: "MAQUILLAJE",
-			tutor: "LEWIS AMARANTE",
-			img: lewisImg,
-		},
-	];
-
 	return (
-		<Page>
+		<StyledSection>
 			<Title>MÁS CURSOS</Title>
-			<div className="items">
+			<ul className="items">
 				{courses.map((course, index) => (
 					<Course
 						title={course.title}
@@ -35,12 +15,12 @@ export default function MoreCourses() {
 						key={index}
 					/>
 				))}
-			</div>
-		</Page>
+			</ul>
+		</StyledSection>
 	);
 }
 
-const Page = styled.section`
+const StyledSection = styled.section`
 	.items {
 		list-style-type: none;
 		display: flex;

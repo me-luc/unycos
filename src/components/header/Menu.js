@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import styled from "styled-components";
-import UserContext from "../../context/UserContext";
 import {
 	MdOutlineKeyboardArrowDown,
 	MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
+import { useContext } from "react";
+import UserContext from "../../context/UserContext";
 
 export default function Menu({ isMenuOpen, setIsMenuOpen }) {
 	const { auth, setAuth, userName } = useContext(UserContext);

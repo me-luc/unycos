@@ -14,7 +14,6 @@ export default function Slider() {
 		},
 	};
 
-	//---getting data from api
 	React.useEffect(() => {
 		axios
 			.get(DATA_URL, headers)
