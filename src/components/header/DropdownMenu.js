@@ -12,7 +12,7 @@ export default function DropdownMenu({ isMenuOpen, setIsMenuOpen }) {
 			isMenuOpen={isMenuOpen}
 			className={isMenuOpen ? "fade-in" : "fade-out"}>
 			{options.map((item, index) => (
-				<Option
+				<MenuOption
 					key={index}
 					selected={item === selectedItem}
 					onClick={() => {
@@ -20,17 +20,17 @@ export default function DropdownMenu({ isMenuOpen, setIsMenuOpen }) {
 						setIsMenuOpen(false);
 					}}>
 					{item}
-				</Option>
+				</MenuOption>
 			))}
 
 			<Line />
-			<Option
+			<MenuOption
 				onClick={() => {
 					setAuth(false);
 					setIsMenuOpen(false);
 				}}>
 				CERRAR SESIÓN
-			</Option>
+			</MenuOption>
 		</StyledMenu>
 	);
 }
@@ -51,7 +51,7 @@ const StyledMenu = styled.nav`
 	z-index: 0;
 `;
 
-const Option = styled.ul`
+const MenuOption = styled.ul`
 	margin: 15px 30px 15px 0;
 	font-family: "Lato";
 	font-style: normal;

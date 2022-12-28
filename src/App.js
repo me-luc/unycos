@@ -31,7 +31,6 @@ const StyledPage = styled.div`
 	width: 100vw;
 	height: auto;
 	display: flex;
-	/* justify-content: center; */
 	align-items: center;
 	flex-direction: column;
 	overflow-y: scroll;

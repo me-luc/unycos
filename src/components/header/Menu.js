@@ -10,7 +10,7 @@ export default function Menu({ isMenuOpen, setIsMenuOpen }) {
 	const { auth, setAuth, userName } = useContext(UserContext);
 	if (auth) {
 		return (
-			<OptionsMenu>
+			<OptionsBox>
 				<Option>CURSOS</Option>
 				<Option onClick={() => setAuth(true)}>
 					HOLA, <span>{userName.toUpperCase()}</span>
@@ -28,20 +28,20 @@ export default function Menu({ isMenuOpen, setIsMenuOpen }) {
 						onClick={() => setIsMenuOpen(true)}
 					/>
 				)}
-			</OptionsMenu>
+			</OptionsBox>
 		);
 	} else {
 		return (
-			<OptionsMenu>
+			<OptionsBox>
 				<Option>CURSOS</Option>
 				<Option onClick={() => setAuth(true)}>REGISTER</Option>
 				<Option onClick={() => setAuth(true)}>LOG IN</Option>
-			</OptionsMenu>
+			</OptionsBox>
 		);
 	}
 }
 
-const OptionsMenu = styled.nav`
+const OptionsBox = styled.nav`
 	display: flex;
 
 	.react-icons {
@@ -49,7 +49,7 @@ const OptionsMenu = styled.nav`
 	}
 `;
 
-const Option = styled.ul`
+const Option = styled.li`
 	font-family: "Lato";
 	font-style: normal;
 	font-weight: 700;
@@ -58,6 +58,7 @@ const Option = styled.ul`
 	color: #858479;
 	cursor: pointer;
 	margin-right: 10px;
+	list-style-type: none;
 
 	:hover {
 		color: #c5af19;

@@ -10,29 +10,29 @@ export default function Footer() {
 			</figure>
 
 			<CentralItem>
-				<Icons>
+				<IconsBox>
 					<FiFacebook className="react-icons" />
 					<FiInstagram className="react-icons" />
 					<FiTwitter className="react-icons" />
 					<FiYoutube className="react-icons" />
-				</Icons>
+				</IconsBox>
 
 				<Line />
 
-				<Options>
+				<AboutCompanyOptions>
 					<p>Terminos y condiciones</p>
 					<p>Política de privacidad</p>
 					<p>Aviso legal</p>
-				</Options>
+				</AboutCompanyOptions>
 			</CentralItem>
 
-			<MoneyOption>
+			<CurrencyAboutCompanyOptions>
 				<Option isSelected={true} clickable={true}>
 					USD ($){" "}
 				</Option>
 				<Option> / </Option>
 				<Option clickable={true}> EUR (€)</Option>
-			</MoneyOption>
+			</CurrencyAboutCompanyOptions>
 		</StyledFooter>
 	);
 }
@@ -50,7 +50,7 @@ const StyledFooter = styled.footer`
 	}
 `;
 
-const Icons = styled.div`
+const IconsBox = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -78,7 +78,7 @@ const Line = styled.div`
 	background-color: #858479;
 `;
 
-const Options = styled.div`
+const AboutCompanyOptions = styled.div`
 	margin-top: 15px;
 	width: 100%;
 	display: flex;
@@ -96,7 +96,7 @@ const Options = styled.div`
 	}
 `;
 
-const MoneyOption = styled.div`
+const CurrencyAboutCompanyOptions = styled.div`
 	display: flex;
 	height: 100%;
 	align-items: flex-end;

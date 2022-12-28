@@ -6,18 +6,18 @@ import styled from "styled-components";
 
 export default function Highlight() {
 	return (
-		<Page>
+		<StyledSection>
 			<ImagePoster />
 			<InfoBox>
 				<IconItem Icon={IoMdBook} title={"12 módulos"} />
 				<IconItem Icon={BiFilm} title={"+3,5 horas"} />
 				<StyledButton>Mas información</StyledButton>
 			</InfoBox>
-		</Page>
+		</StyledSection>
 	);
 }
 
-const Page = styled.section`
+const StyledSection = styled.section`
 	margin-bottom: 40px;
 `;
 

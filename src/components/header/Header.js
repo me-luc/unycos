@@ -1,7 +1,6 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo-unycos.png";
-import UserContext from "../../context/UserContext";
 import DropdownMenu from "./DropdownMenu";
 import Menu from "./Menu";
 
@@ -10,12 +9,12 @@ export default function Header() {
 
 	return (
 		<nav>
-			<StyledMenu>
+			<StyledHeader>
 				<figure>
 					<img src={logo} alt="Company logo" />
 				</figure>
 				<Menu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
-			</StyledMenu>
+			</StyledHeader>
 			<DropdownMenu
 				isMenuOpen={isMenuOpen}
 				setIsMenuOpen={setIsMenuOpen}
@@ -24,7 +23,7 @@ export default function Header() {
 	);
 }
 
-const StyledMenu = styled.header`
+const StyledHeader = styled.header`
 	width: 100vw;
 	height: 40px;
 	filter: drop-shadow(0px 2px 8px #000000);

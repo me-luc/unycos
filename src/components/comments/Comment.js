@@ -2,13 +2,17 @@ import styled from "styled-components";
 import { BiLike } from "react-icons/bi";
 import { HiOutlineCheckCircle as CheckCircle } from "react-icons/hi";
 
-export default function Comment({ comment }) {
-	const { author, time, commentText, profileImg, reply } = comment;
-
+export default function Comment({
+	comment: { author, time, commentText, profileImg, reply },
+}) {
 	return (
-		<Page>
+		<StyledItem>
 			<ImageBox>
-				{profileImg ? <img src={profileImg} /> : getInitial(author)}
+				{profileImg ? (
+					<img src={profileImg} alt={author} />
+				) : (
+					getInitial(author)
+				)}
 			</ImageBox>
 
 			<div className="content">
@@ -35,7 +39,7 @@ export default function Comment({ comment }) {
 					</>
 				)}
 			</div>
-		</Page>
+		</StyledItem>
 	);
 
 	function getInitial(name) {
@@ -45,7 +49,7 @@ export default function Comment({ comment }) {
 	}
 }
 
-const Page = styled.li`
+const StyledItem = styled.li`
 	display: flex;
 	margin: 25px 0;
 

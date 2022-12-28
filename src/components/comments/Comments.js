@@ -40,14 +40,14 @@ export default function Comments() {
 	];
 
 	return (
-		<Page>
+		<StyledCommentsList>
 			{comments.map((comment) => (
 				<Comment comment={comment} />
 			))}
-		</Page>
+		</StyledCommentsList>
 	);
 }
 
-const Page = styled.ul`
+const StyledCommentsList = styled.ul`
 	width: 755px;
 `;

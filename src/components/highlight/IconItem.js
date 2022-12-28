@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export default function IconItem({ Icon, title }) {
 	return (
-		<Item>
-			<Eclipse>
+		<IconContainer>
+			<Circle>
 				<Icon className="react-icons" />
-			</Eclipse>
+			</Circle>
 			<Title>{title}</Title>
-		</Item>
+		</IconContainer>
 	);
 }
 
-const Item = styled.div`
+const IconContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -28,10 +28,10 @@ const Title = styled.h2`
 	text-transform: uppercase;
 `;
 
-const Eclipse = styled.div`
+const Circle = styled.div`
 	width: 80px;
 	height: 80px;
-	border-radius: 45px;
+	border-radius: 50%;
 	border: 4px solid #d8d7ce;
 	color: #d8d7ce;
 
