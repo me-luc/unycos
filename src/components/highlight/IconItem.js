@@ -15,6 +15,10 @@ const IconContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@media (max-width: 605px) {
+		flex-direction: column;
+	}
 `;
 
 const Title = styled.h2`
@@ -26,6 +30,9 @@ const Title = styled.h2`
 	font-size: 24px;
 	line-height: 24px;
 	text-transform: uppercase;
+	@media (max-width: 605px) {
+		margin-top: 20px;
+	}
 `;
 
 const Circle = styled.div`

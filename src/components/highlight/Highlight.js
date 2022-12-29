@@ -9,23 +9,32 @@ export default function Highlight() {
 		<StyledSection>
 			<ImagePoster />
 			<InfoBox>
+				<StyledButton mobile>Mas información</StyledButton>
 				<IconItem Icon={IoMdBook} title={"12 módulos"} />
 				<IconItem Icon={BiFilm} title={"+3,5 horas"} />
-				<StyledButton>Mas información</StyledButton>
+				<StyledButton desktop>Mas información</StyledButton>
 			</InfoBox>
 		</StyledSection>
 	);
 }
 
 const StyledSection = styled.section`
+	width: 100vw;
 	margin-bottom: 40px;
 `;
 
 const InfoBox = styled.div`
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+
+	@media (max-width: 605px) {
+		flex-direction: column;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+	}
 `;
 
 const StyledButton = styled.button`
@@ -44,4 +53,17 @@ const StyledButton = styled.button`
 	line-height: 20px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+
+	${({ mobile }) => mobile && "display: none;"}
+
+	@media (max-width: 605px) {
+		margin-bottom: 20px;
+
+		${({ mobile }) =>
+			mobile &&
+			`
+		display: block;
+		width: 90%;`}
+		${({ desktop }) => desktop && "display: none; "}
+	}
 `;

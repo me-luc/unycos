@@ -19,9 +19,13 @@ export default function ImagePoster() {
 
 const StyledImgBox = styled.figure`
 	margin-bottom: 50px;
-	width: 1135px;
+	width: 100vw;
 	height: 480px;
+	/* min-width: 1130px; */
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	font-family: "Lato";
 	font-style: normal;
@@ -48,19 +52,19 @@ const StyledImgBox = styled.figure`
 	}
 
 	img {
-		width: 100%;
+		width: 100vw;
 		height: 100%;
-		object-fit: contain;
+		object-fit: cover;
+		object-position: center;
 	}
 
 	.style {
 		display: flex;
-		justify-content: center;
 		flex-direction: column;
 		justify-content: end;
 		align-items: center;
 
-		width: 100%;
+		width: 100vw;
 		height: 100%;
 		position: absolute;
 		top: 0;
@@ -77,7 +81,13 @@ const StyledImgBox = styled.figure`
 		display: none;
 	}
 
-	@media (max-width: 505px) {
+	@media (max-width: 605px) {
+		h1 {
+			font-size: 28px;
+		}
+		p {
+			font-size: 20px;
+		}
 		.mobile {
 			display: block;
 		}
