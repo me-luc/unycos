@@ -6,7 +6,7 @@ import {
 import { useContext } from "react";
 import UserContext from "../../context/UserContext";
 
-export default function Menu({ isMenuOpen, setIsMenuOpen }) {
+export default function Menu({ isMenuOpen, setIsMenuOpen, className }) {
 	const { auth, setAuth, userName } = useContext(UserContext);
 	if (auth) {
 		return (

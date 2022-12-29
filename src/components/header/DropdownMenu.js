@@ -2,8 +2,7 @@ import styled from "styled-components";
 import { useContext, useState } from "react";
 import UserContext from "../../context/UserContext";
 
-export default function DropdownMenu({ isMenuOpen, setIsMenuOpen }) {
-	const options = ["PANEL DE CONTROL", "TUS CURSOS", "PERFIL", "CUENTA"];
+export default function DropdownMenu({ isMenuOpen, setIsMenuOpen, options }) {
 	const [selectedItem, setSelectedItem] = useState("");
 	const { setAuth } = useContext(UserContext);
 

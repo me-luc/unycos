@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import imgHighlight from "../../assets/highlight.png";
+import imgMobile from "../../assets/mobile-highlight.png";
 
 export default function ImagePoster() {
 	return (
@@ -10,7 +11,8 @@ export default function ImagePoster() {
 					enseña <span>natación</span>
 				</p>
 			</div>
-			<img src={imgHighlight} alt="highlight " />
+			<img className="desktop" src={imgHighlight} alt="highlight " />
+			<img className="mobile" src={imgMobile} alt="highlight " />
 		</StyledImgBox>
 	);
 }
@@ -69,5 +71,18 @@ const StyledImgBox = styled.figure`
 				#000000 100%
 			),
 			linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 26.74%);
+	}
+
+	.mobile {
+		display: none;
+	}
+
+	@media (max-width: 505px) {
+		.mobile {
+			display: block;
+		}
+		.desktop {
+			display: none;
+		}
 	}
 `;
