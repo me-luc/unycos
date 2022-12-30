@@ -21,10 +21,15 @@ export default function Highlight() {
 const StyledSection = styled.section`
 	width: 100vw;
 	margin-bottom: 40px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 
 const InfoBox = styled.div`
 	width: 100vw;
+	max-width: 1135px;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;

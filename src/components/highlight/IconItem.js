@@ -18,18 +18,19 @@ const IconContainer = styled.div`
 
 	@media (max-width: 605px) {
 		flex-direction: column;
+		margin: 20px;
 	}
 `;
 
 const Title = styled.h2`
 	color: #fff;
-	margin-left: 15px;
 	font-family: "Lato";
 	font-style: normal;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 24px;
 	text-transform: uppercase;
+
 	@media (max-width: 605px) {
 		margin-top: 20px;
 	}

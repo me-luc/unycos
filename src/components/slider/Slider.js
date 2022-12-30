@@ -48,7 +48,7 @@ export default function Slider() {
 
 	return (
 		<StyledSlider>
-			<ImageBox>
+			<ImageBox desktop>
 				{spolight ? (
 					<img src={spolight.image} />
 				) : (
@@ -85,6 +85,13 @@ export default function Slider() {
 							{spolight.description}
 						</SpolightDescription>
 						<Articles>
+							<Article mobile>
+								<img
+									src={spolight.image}
+									alt={spolight.title}
+								/>
+								<p>{spolight.title}</p>
+							</Article>
 							{trio.map((slide, index) => {
 								if (slide._id !== spolight._id)
 									return (
@@ -112,10 +119,16 @@ const StyledSlider = styled.section`
 	border-radius: 4px;
 	display: flex;
 	margin-bottom: 45px;
+
+	@media (max-width: 605px) {
+		width: 100vw;
+		background: none;
+	}
 `;
 
 const ImageBox = styled.figure`
 	width: 560px;
+	min-width: 290px;
 	height: 100%;
 	background-color: #858479;
 	object-fit: contain;
@@ -128,6 +141,10 @@ const ImageBox = styled.figure`
 		width: 100%;
 		z-index: 0;
 	}
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none; "}
+	}
 `;
 
 const SpolightSide = styled.div`
@@ -138,23 +155,44 @@ const SpolightSide = styled.div`
 	align-items: center;
 	box-sizing: border-box;
 	padding: 40px;
+
+	@media (max-width: 605px) {
+		width: 100vw;
+		padding: 15px;
+	}
 `;
 const Articles = styled.ul`
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+
+	@media (max-width: 605px) {
+		width: 100vw;
+	}
 `;
 
 const Article = styled.li`
 	width: 150px;
 	cursor: pointer;
+
 	${({ index }) => index > 0 && "opacity: 0.5;"}
+	${({ mobile }) => mobile && "display: none; "}
+	
+	@media (max-width: 605px) {
+		${({ mobile }) => mobile && "display: block; "}
+
+		img {
+			width: 140px;
+			margin-right: 25px;
+		}
+	}
 
 	:hover {
 		opacity: 1;
 	}
 	img {
 		width: 100%;
+		min-width: 140px;
 		height: 80px;
 		object-fit: cover;
 		background: #1d1a05;
