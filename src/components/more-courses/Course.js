@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Course({ tutor, title, img }) {
+export default function Course({ tutor, title, img, desktop }) {
 	return (
-		<StyledItem>
+		<StyledItem desktop={desktop}>
 			<ShadeStyle>
 				<h4>{tutor}</h4>
 				<p>
@@ -22,6 +22,9 @@ const StyledItem = styled.li`
 	overflow: hidden;
 	margin: 15px;
 
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
+	}
 	img {
 		width: 100%;
 		object-fit: contain;
