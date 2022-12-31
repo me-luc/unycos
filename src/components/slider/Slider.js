@@ -86,21 +86,22 @@ export default function Slider() {
 						</SpolightDescription>
 						<Articles>
 							<Article mobile>
-								<img
+								<ArticleImg
 									src={spolight.image}
 									alt={spolight.title}
 								/>
-								<p>{spolight.title}</p>
 							</Article>
 							{trio.map((slide, index) => {
 								if (slide._id !== spolight._id)
 									return (
 										<Article index={index} key={slide._id}>
-											<img
+											<ArticleImg
 												src={slide.image}
 												alt={slide.title}
 											/>
-											<p>{slide.title}</p>
+											<ArticleTitle>
+												{slide.title}
+											</ArticleTitle>
 										</Article>
 									);
 							})}
@@ -122,6 +123,7 @@ const StyledSlider = styled.section`
 
 	@media (max-width: 605px) {
 		width: 100vw;
+		height: auto;
 		background: none;
 	}
 `;
@@ -157,8 +159,9 @@ const SpolightSide = styled.div`
 	padding: 40px;
 
 	@media (max-width: 605px) {
-		width: 100vw;
+		width: 98%;
 		padding: 15px;
+		text-align: center;
 	}
 `;
 const Articles = styled.ul`
@@ -168,44 +171,63 @@ const Articles = styled.ul`
 
 	@media (max-width: 605px) {
 		width: 100vw;
+		height: auto;
+		overflow: hidden;
+		overflow-x: scroll;
 	}
 `;
 
 const Article = styled.li`
 	width: 150px;
 	cursor: pointer;
+	margin-right: 5px;
 
 	${({ index }) => index > 0 && "opacity: 0.5;"}
 	${({ mobile }) => mobile && "display: none; "}
 	
 	@media (max-width: 605px) {
 		${({ mobile }) => mobile && "display: block; "}
-
-		img {
-			width: 140px;
-			margin-right: 25px;
-		}
+		width: 200px;
 	}
 
 	:hover {
 		opacity: 1;
 	}
-	img {
-		width: 100%;
-		min-width: 140px;
-		height: 80px;
-		object-fit: cover;
-		background: #1d1a05;
+`;
+
+const ArticleImg = styled.img`
+	width: 100%;
+	min-width: 140px;
+	height: 80px;
+	object-fit: cover;
+	background: #1d1a05;
+
+	@media (max-width: 605px) {
+		width: 200px;
+		height: 140px;
 	}
-	p {
+`;
+
+const ArticleTitle = styled.h4`
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #1d1a05;
+
+	@media (max-width: 605px) {
+		color: #422407;
 		font-family: "Lato";
 		font-style: normal;
 		font-weight: 700;
-		font-size: 12px;
+		font-size: 16px;
 		line-height: 16px;
 		text-align: center;
 		text-transform: uppercase;
-		color: #1d1a05;
+		margin-top: 10px;
 	}
 `;
 
@@ -224,6 +246,11 @@ const SpolightTitle = styled.h2`
 	text-align: left;
 	color: #1d1a05;
 	margin-bottom: 10px;
+
+	@media (max-width: 605px) {
+		color: #fff;
+		justify-content: center;
+	}
 `;
 
 const SpolightDescription = styled.p`
