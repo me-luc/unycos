@@ -23,6 +23,15 @@ export default function MoreCourses() {
 
 const StyledSection = styled.section`
 	margin-bottom: 40px;
+
+	@media (max-width: 605px) {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+	}
 `;
 
 const CourseList = styled.ul`
@@ -31,6 +40,8 @@ const CourseList = styled.ul`
 
 	@media (max-width: 605px) {
 		flex-direction: column;
+		box-sizing: border-box;
+		padding: 10px 50px;
 	}
 `;
 

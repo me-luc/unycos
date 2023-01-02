@@ -9,7 +9,7 @@ export default function Course({ tutor, title, img, desktop }) {
 					enseña <span>{title}</span>
 				</p>
 			</ShadeStyle>
-			<img src={img} alt={tutor} />
+			<StyledImg src={img} alt={tutor} />
 		</StyledItem>
 	);
 }
@@ -24,10 +24,19 @@ const StyledItem = styled.li`
 
 	@media (max-width: 605px) {
 		${({ desktop }) => desktop && "display: none;"}
-	}
-	img {
 		width: 100%;
-		object-fit: contain;
+		margin: 15px 0 15px 0;
+	}
+`;
+
+const StyledImg = styled.img`
+	width: 100%;
+	min-width: 370px;
+	object-fit: contain;
+
+	@media (max-width: 605px) {
+		object-fit: cover;
+		object-position: center;
 	}
 `;
 

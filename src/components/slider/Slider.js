@@ -250,6 +250,7 @@ const SpolightTitle = styled.h2`
 	@media (max-width: 605px) {
 		color: #fff;
 		justify-content: center;
+		text-align: center;
 	}
 `;
 

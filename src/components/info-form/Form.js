@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CountryInput from "./CountryInput";
 
 export default function Form() {
 	function submit(e) {
@@ -6,17 +7,15 @@ export default function Form() {
 	}
 	return (
 		<Page onSubmit={submit}>
+			<Title>OBTÉN MÁS INFORMACiÓN</Title>
 			<StyledInput type="name" placeholder="Nombre completo" name="" />
 			<StyledInput
 				type="email"
 				placeholder="Correo electrónico"
 				name=""
 			/>
-			<StyledInput
-				type="country"
-				placeholder="País / Código país"
-				name=""
-			/>
+			<CountryInput />
+
 			<StyledInput type="" placeholder="TeLéfono" name="" />
 
 			<div className="checkbox">
@@ -54,6 +53,12 @@ const Page = styled.form`
 	flex-wrap: wrap;
 	display: flex;
 
+	@media (max-width: 605px) {
+		flex-direction: column;
+		align-items: center;
+		width: 100vw;
+	}
+
 	.button-box {
 		display: flex;
 		align-items: center;
@@ -67,6 +72,11 @@ const Page = styled.form`
 		align-items: center;
 		width: 370px;
 		margin: 7px;
+
+		@media (max-width: 605px) {
+			width: 97%;
+			margin: 0 0 10px 0;
+		}
 
 		[type="checkbox"] {
 			cursor: pointer;
@@ -89,9 +99,14 @@ const Page = styled.form`
 			font-weight: 400;
 			font-size: 14px;
 			color: #858479;
+			width: 100%;
 
 			span {
 				color: #fff;
+			}
+
+			@media (max-width: 605px) {
+				margin-left: 10px;
 			}
 		}
 	}
@@ -141,4 +156,33 @@ const StyledInput = styled.input`
 	color: #a1a097;
 	border: none;
 	margin: 7px;
+
+	@media (max-width: 605px) {
+		width: 97%;
+		margin: 0 0 10px 0;
+	}
+`;
+
+const Title = styled.h2`
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 32px;
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #d8d7ce;
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+	margin: 30px 0;
+
+	@media (max-width: 605px) {
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #ffffff;
+	}
 `;
