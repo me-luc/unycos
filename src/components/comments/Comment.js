@@ -7,7 +7,7 @@ export default function Comment({
 }) {
 	return (
 		<StyledItem>
-			<ImageBox>
+			<ImageBox desktop>
 				{profileImg ? (
 					<img src={profileImg} alt={author} />
 				) : (
@@ -15,20 +15,21 @@ export default function Comment({
 				)}
 			</ImageBox>
 
-			<div className="content">
-				<AuthorBox>
+			<ContentBox>
+				<AuthorBox desktop>
 					{author}
 					<span>
 						<BiLike className="react-icons" /> hace {time}
 					</span>
 				</AuthorBox>
 				<CommentText>{commentText}</CommentText>
+				<AuthorMobile>{author}</AuthorMobile>
 
 				{reply && (
 					<>
-						<Line />
-						<ReplyBox>{reply.comment}</ReplyBox>
-						<ReplyAuthorBox>
+						<Line desktop />
+						<ReplyBox desktop>{reply.comment}</ReplyBox>
+						<ReplyAuthorBox desktop>
 							<CheckCircle className="react-icons" />
 							{reply.author}
 							<span>
@@ -38,7 +39,7 @@ export default function Comment({
 						</ReplyAuthorBox>
 					</>
 				)}
-			</div>
+			</ContentBox>
 		</StyledItem>
 	);
 
@@ -53,9 +54,14 @@ const StyledItem = styled.li`
 	display: flex;
 	margin: 25px 0;
 
-	.content {
-		margin-left: 20px;
-		width: 670px;
+	@media (max-width: 605px) {
+		background-color: #fff;
+		width: 280px;
+		height: 155px;
+		border-radius: 5px;
+		margin: 0 7px;
+		box-sizing: border-box;
+		padding: 8px;
 	}
 
 	.react-icons {
@@ -80,6 +86,10 @@ const ImageBox = styled.figure`
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: #000000;
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
+	}
 `;
 
 const CommentText = styled.p`
@@ -89,6 +99,15 @@ const CommentText = styled.p`
 	font-size: 16px;
 	line-height: 20px;
 	color: #d8d7ce;
+
+	@media (max-width: 605px) {
+		font-family: "Lato";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+		color: #333333;
+	}
 `;
 
 const AuthorBox = styled.h3`
@@ -111,6 +130,10 @@ const AuthorBox = styled.h3`
 		align-items: center;
 		margin-left: 15px;
 	}
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
+	}
 `;
 const ReplyBox = styled.p`
 	font-family: "Lato";
@@ -119,7 +142,24 @@ const ReplyBox = styled.p`
 	font-size: 16px;
 	line-height: 20px;
 	color: #858479;
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
+	}
 `;
+
+const ContentBox = styled.div`
+	margin-left: 20px;
+	width: 670px;
+
+	@media (max-width: 605px) {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+`;
+
 const ReplyAuthorBox = styled.h3`
 	font-family: "Lato";
 	font-style: normal;
@@ -149,6 +189,10 @@ const ReplyAuthorBox = styled.h3`
 		color: #c5af19;
 		font-size: 20px;
 	}
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
+	}
 `;
 
 const Line = styled.div`
@@ -156,4 +200,24 @@ const Line = styled.div`
 	height: 1px;
 	background: #858479;
 	margin: 15px 0;
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
+	}
+`;
+
+const AuthorMobile = styled.h4`
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: right;
+	text-transform: uppercase;
+	color: #000000;
+
+	display: none;
+	@media (max-width: 605px) {
+		display: block;
+	}
 `;
