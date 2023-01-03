@@ -125,6 +125,7 @@ const StyledSlider = styled.section`
 		width: 100vw;
 		height: auto;
 		background: none;
+		margin: 0;
 	}
 `;
 

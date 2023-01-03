@@ -34,8 +34,6 @@ export default function LessonPlan() {
 	);
 }
 
-function Lessons() {}
-
 const StyledSection = styled.section`
 	display: flex;
 	flex-direction: column;
@@ -77,6 +75,15 @@ const Title = styled.h2`
 	@media (max-width: 605px) {
 		${({ desktop }) => desktop && "display: none;"}
 		${({ mobile }) => mobile && "display: block;"}
+
+		font-family: 'Lato';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #ffffff;
 	}
 `;
 

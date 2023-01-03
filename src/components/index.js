@@ -8,6 +8,7 @@ import RelatedArticles from "./related-articles/RelatedArticles";
 import Comments from "./comments/Comments";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
+import ExclusiveContent from "./exclusive-content/ExclusiveContent";
 
 export {
 	Slider,
@@ -20,4 +21,5 @@ export {
 	RelatedArticles,
 	Comments,
 	Footer,
+	ExclusiveContent,
 };

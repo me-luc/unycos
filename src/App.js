@@ -13,6 +13,7 @@ export default function App() {
 				<Component.Header />
 				<Component.Highlight />
 				<Component.Slider />
+				<Component.ExclusiveContent />
 				<Component.LessonPlan />
 				<Component.MoreCourses />
 				<Component.Form />
