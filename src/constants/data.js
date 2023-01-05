@@ -84,3 +84,23 @@ export const content = [
 			"El manejo de los saltos y virajes mejorará considerablemente tu rendimiento y tu técnica de natación. Los profesionales de fama internacional que asisten a Mireia te enseñan a perfeccionar esta técnica.",
 	},
 ];
+
+export const relatedArticles = [
+	{
+		comment: "Consejos para nadadores principiantes",
+		date: "22.06.2019",
+	},
+	{
+		comment:
+			"Recomendaciones para lograr que un niño venza el miedo al agua",
+		date: "22.06.2019",
+	},
+	{
+		comment: "¿Nadar es un buen método para adelgazar?",
+		date: "22.06.2019",
+	},
+	{
+		comment: "Consejos para mejorar la técnica del estilo crol",
+		date: "22.06.2019",
+	},
+];

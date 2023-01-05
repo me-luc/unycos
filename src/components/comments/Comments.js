@@ -18,9 +18,18 @@ export default function Comments() {
 					<Comment comment={comment} />
 				))}
 			</StyledCommentsList>
+			<StyledButton desktop>VER MÁS</StyledButton>
 		</>
 	);
 }
+
+const StyledSection = styled.section`
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
 
 const StyledCommentsList = styled.ul`
 	width: 755px;
@@ -89,5 +98,29 @@ const TitleMobile = styled.h3`
 
 	@media (max-width: 605px) {
 		display: block;
+	}
+`;
+
+const StyledButton = styled.button`
+	width: 180px;
+	height: 40px;
+	border: 2px solid #d8d7ce;
+	border-radius: 4px;
+	background: none;
+
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #d8d7ce;
+
+	@media (max-width: 605px) {
+		${({ desktop }) => desktop && "display: none;"}
 	}
 `;
