@@ -87,20 +87,19 @@ export const content = [
 
 export const relatedArticles = [
 	{
-		comment: "Consejos para nadadores principiantes",
+		title: "Consejos para nadadores principiantes",
 		date: "22.06.2019",
 	},
 	{
-		comment:
-			"Recomendaciones para lograr que un niño venza el miedo al agua",
+		title: "Recomendaciones para lograr que un niño venza el miedo al agua",
 		date: "22.06.2019",
 	},
 	{
-		comment: "¿Nadar es un buen método para adelgazar?",
+		title: "¿Nadar es un buen método para adelgazar?",
 		date: "22.06.2019",
 	},
 	{
-		comment: "Consejos para mejorar la técnica del estilo crol",
+		title: "Consejos para mejorar la técnica del estilo crol",
 		date: "22.06.2019",
 	},
 ];
