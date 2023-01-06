@@ -25,6 +25,10 @@ const Poster = styled.section`
 	justify-content: space-evenly;
 	align-items: center;
 	margin-bottom: 45px;
+
+	@media (max-width: 605px) {
+		display: none;
+	}
 `;
 
 const Title = styled.h2`

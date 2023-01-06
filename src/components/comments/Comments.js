@@ -7,7 +7,7 @@ export default function Comments() {
 	return (
 		<>
 			<TitlePage>Comentarios de los estudiantes</TitlePage>
-			<RatesDescription>
+			<RatesDescription desktop>
 				<BiLike className="react-icons" />
 				98.7% de valoraciones positivas{" "}
 				<span>/ total de 726 valoraciones</span>
@@ -22,14 +22,6 @@ export default function Comments() {
 		</>
 	);
 }
-
-const StyledSection = styled.section`
-	margin-bottom: 40px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-`;
 
 const StyledCommentsList = styled.ul`
 	width: 755px;
@@ -60,6 +52,10 @@ const RatesDescription = styled.h4`
 
 	span {
 		color: #858479;
+	}
+
+	@media (max-width: 605px) {
+		display: none;
 	}
 `;
 

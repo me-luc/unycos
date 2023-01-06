@@ -19,7 +19,7 @@ export default function App() {
 				<Component.Form />
 				<Component.Comments />
 				<Component.RelatedArticles />
-				<Component.ReadMore />
+				<Component.ReadMore desktop />
 				<Component.Footer />
 			</StyledPage>
 		</UserContext.Provider>
