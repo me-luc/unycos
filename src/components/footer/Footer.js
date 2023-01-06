@@ -78,6 +78,8 @@ const StyledFooter = styled.footer`
 	@media (max-width: 605px) {
 		flex-direction: column;
 		justify-content: center;
+		box-sizing: border-box;
+		padding: 10px;
 	}
 `;
 

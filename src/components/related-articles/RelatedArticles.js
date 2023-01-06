@@ -120,4 +120,8 @@ const StyledButton = styled.button`
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: #f1f1f1;
+
+	@media (max-width: 605px) {
+		width: 240px;
+	}
 `;
