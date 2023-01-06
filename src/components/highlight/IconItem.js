@@ -30,8 +30,10 @@ const Title = styled.h2`
 	font-size: 24px;
 	line-height: 24px;
 	text-transform: uppercase;
+	margin-left: 15px;
 
 	@media (max-width: 605px) {
+		margin-left: 0;
 		margin-top: 20px;
 	}
 `;

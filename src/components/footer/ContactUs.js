@@ -19,6 +19,12 @@ const StyledSection = styled.section`
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 40px;
+
+	display: none;
+
+	@media (max-width: 605px) {
+		display: block;
+	}
 `;
 
 const Title = styled.h4`

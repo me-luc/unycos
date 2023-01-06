@@ -15,7 +15,7 @@ export default function Footer() {
 				<AboutCompany desktop />
 			</CentralItem>
 
-			<ContactUs />
+			<ContactUs mobile />
 
 			<CustomDiv>
 				<LogoImage mobile />
