@@ -2,8 +2,7 @@
 
 This is a homepage to the Unycos company. All of this is part of a technical chalenge.
 
-You can see the project by downloading it and opening the 
-`index.html` in the `dist` folder
+### You can see the project by downloading it and opening the `index.html` in the `dist` folder
 
 You can also start the project by following the scripts:
 
